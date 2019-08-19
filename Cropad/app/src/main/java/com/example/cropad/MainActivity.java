@@ -1,0 +1,115 @@
+package com.example.cropad;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public class MainActivity extends AppCompatActivity {
+
+    public Button registe;
+    public Button login;
+    String passvalue;
+    String url="http://192.168.1.107:5656/user/login";
+    private EditText user,p;
+
+    public void firstpag(){
+        Intent fp = new Intent(MainActivity.this, first_page.class);
+        startActivity(fp);
+    }
+
+    public void registerform(){
+        Intent r = new Intent(this, registration_page.class);
+        startActivity(r);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        user = (EditText) findViewById(R.id.email_id);
+        p = (EditText) findViewById(R.id.password);
+
+        registe = (Button) findViewById(R.id.register_but);
+        registe.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                registerform();
+
+            }
+        });
+
+        login = (Button) findViewById(R.id.login_but);
+        login.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                final String username = user.getText().toString();
+                final String Password = p.getText().toString();
+                String url="http://192.168.1.107:5656/user/login";
+                RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
+                JSONObject jsonObject = new JSONObject();
+                try{
+                    jsonObject.put("email_id",username);
+                    jsonObject.put("password",Password);
+                }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
+                final String requestBody = jsonObject.toString();
+                ConnectionManager.sendData(requestBody, requestQueue, url, new ConnectionManager.VolleyCallback() {
+                    @Override
+                    public void onSuccessResponse(String result) {
+
+                        JSONObject jsonObject= null;
+                        try {
+                            jsonObject = new JSONObject(result);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                        String success= null;
+                        try {
+                            success = jsonObject.getString("success");
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                        if(success.equals("true")){
+                            firstpag();
+                        }
+                        else
+                        {
+                            Toast.makeText(MainActivity.this,"Invalid Credentials",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast toast = Toast.makeText(MainActivity.this,"Could not log in "+error,Toast.LENGTH_LONG);
+                        toast.show();
+                    }
+                });
+
+
+            }
+        });
+
+    }
+
+
+}
