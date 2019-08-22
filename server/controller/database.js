@@ -24,4 +24,11 @@ FROM markets , market_crop_rel where markets.id = market_crop_rel.market_id and 
   })
 }
 
-module.exports = { getUser, newUser, getMarkets }
+function newMarket (values, cb) {
+  var sql = 'INSERT INTO `markets` (`name`, `market_lat`, `market_long`) VALUES(?)'
+  conn.query(sql, [values], function (err, result) {
+    cb(err, result)
+  })
+}
+
+module.exports = { getUser, newUser, getMarkets, newMarket }

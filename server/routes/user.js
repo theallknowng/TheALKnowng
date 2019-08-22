@@ -33,4 +33,16 @@ router.post('/markets', function (req, res) {
   })
 })
 
+router.post('/marketRegister', function(req,res){
+  var values=[ req.body.name,req.body.lat, req.body.long ]
+  database.newMarket(values, (err, result)=> {
+    if (err) {
+      res.json({ success: 'false' })
+    } else {
+      res.json({ success: 'true' })
+    }
+
+  })
+})
+
 module.exports = router

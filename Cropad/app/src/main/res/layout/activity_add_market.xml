@@ -31,21 +31,41 @@
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Name of Market"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/name_city"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.899" />
+
+    <EditText
+        android:id="@+id/name_city"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
-        android:hint="Name of Market"
+        android:gravity="center"
+        android:hint="City Name"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/getlocationlati"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/market_name"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.932" />
 
-    <EditText
+    <TextView
         android:id="@+id/getlocationlati"
         android:layout_width="230dp"
         android:layout_height="50dp"
@@ -56,16 +76,17 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
+        android:gravity="center"
         android:hint="Latitude"
-        android:inputType="textEmailAddress"
+        android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/add_market"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.745" />
+        app:layout_constraintVertical_bias="0.782" />
 
-    <EditText
+    <TextView
         android:id="@+id/getlocationlongi"
         android:layout_width="230dp"
         android:layout_height="50dp"
@@ -76,8 +97,9 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
+        android:gravity="center"
+        android:textSize="20dp"
         android:hint="Logitude"
-        android:inputType="textEmailAddress"
         app:layout_constraintBottom_toTopOf="@+id/add_market"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -104,7 +126,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.755" />
+        app:layout_constraintVertical_bias="0.851" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

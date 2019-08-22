@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
                 final String username = user.getText().toString();
                 final String Password = p.getText().toString();
-                String url="http://10.0.4.248:5656/user/login";
+                String url="http://10.0.4.196:5656/user/login";
                 RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
                 JSONObject jsonObject = new JSONObject();
                 try{

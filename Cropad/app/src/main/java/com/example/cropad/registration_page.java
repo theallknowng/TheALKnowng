@@ -29,6 +29,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
@@ -75,7 +76,7 @@ public class registration_page extends AppCompatActivity {
                         final String Email = email.getText().toString();
                         final String Hometown = hT.getText().toString();
                         final String Password = p.getText().toString();
-                        String url = "http://10.0.4.248:5656/user/register";
+                        String url = "http://10.0.4.196:5656/user/register";
                         RequestQueue requestQueue = Volley.newRequestQueue(registration_page.this);
                         JSONObject jsonObject = new JSONObject();
                         try {
@@ -136,6 +137,7 @@ public class registration_page extends AppCompatActivity {
         List<Address> addresses;
         try{
             addresses=geocoder.getFromLocation(lat,lon,10);
+            System.out.println(Arrays.toString(addresses.toArray()));
             if(addresses.size()>0){
             for (Address adr: addresses){
                 if( adr.getLocality() !=null && adr.getLocality().length() >0){
