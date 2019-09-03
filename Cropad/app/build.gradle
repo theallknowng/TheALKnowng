@@ -32,5 +32,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.2.0'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.2.0'
+    implementation 'com.baoyz.pullrefreshlayout:library:1.2.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
 
 }
