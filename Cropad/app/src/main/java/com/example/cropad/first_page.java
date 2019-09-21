@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class first_page extends AppCompatActivity {
 
@@ -33,15 +35,29 @@ public class first_page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_page);
 
-        int images[] = {R.drawable.logo, R.drawable.weather};
+        SimpleDateFormat sdf = new SimpleDateFormat("MM");
+        String currentmonth = sdf.format(new Date());
+        Integer currentmonthin = Integer.valueOf(currentmonth);
+
+        int rabi[] = {R.drawable.jowar, R.drawable.wheat};
+        int kharif[] = {R.drawable.sugar,R.drawable.jowar};
+
         v_flip = findViewById(R.id.flipper);
 
-        for (int i = 0; i < images.length; i++)
+        if (currentmonthin >= 04 && currentmonthin <= 10)
         {
-            flipperimage(images[i]);
+            for (int i = 0; i < rabi.length; i++) {
+                flipperimage(rabi[i]);
+            }
+
         }
 
+        else{
+            for (int i = 0; i < kharif.length; i++) {
+                flipperimage(kharif[i]);
+            }
 
+        }
 
 
         log_out= (Button) findViewById(R.id.logout_but);

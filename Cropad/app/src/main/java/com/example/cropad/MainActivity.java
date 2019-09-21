@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     public Button registe;
     public Button login;
+    public Button test;
     String passvalue;
     String url="http://192.168.1.107:5656/user/login";
     private EditText user,p;
@@ -33,6 +34,12 @@ public class MainActivity extends AppCompatActivity {
         Intent r = new Intent(this, registration_page.class);
         startActivity(r);
     }
+
+    public void testing(){
+        Intent tes = new Intent(this, first_page.class);
+        startActivity(tes);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +56,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 registerform();
 
+            }
+        });
+
+        test = (Button) findViewById(R.id.test_but);
+        test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                testing();
             }
         });
 

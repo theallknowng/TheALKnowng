@@ -3,6 +3,7 @@ package com.example.cropad;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -11,6 +12,8 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class weather_forecast extends AppCompatActivity {
 
@@ -18,6 +21,11 @@ public class weather_forecast extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather_forecast);
+
+        TextView datecurrent = findViewById(R.id.datetime);
+        SimpleDateFormat sdf =  new SimpleDateFormat("yyyy.MM.dd ");
+        String currentdate = sdf.format(new Date());
+        datecurrent.setText(currentdate);
 
         String url="http://10.0.4.196:5656/user/login";
         RequestQueue requestQueue = Volley.newRequestQueue(weather_forecast.this);
