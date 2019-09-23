@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="#47D476"
     tools:context=".first_page">
-
     <TextView
         android:id="@+id/title"
         android:layout_width="399dp"
@@ -37,93 +36,118 @@
         app:layout_constraintTop_toTopOf="@+id/title"
         tools:layout_editor_absoluteX="6dp" />
 
-    <Button
-        android:id="@+id/market_place"
-        style="@android:style/Widget.DeviceDefault.Button.Toggle"
-        android:layout_width="150dp"
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="426dp"
+        android:layout_height="487dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flipper"
+        app:layout_constraintVertical_bias="0.741"
+        tools:layout_editor_absoluteX="-9dp">
 
-        android:layout_height="150dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="236dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@drawable/roundbut"
-        android:text="Market Place"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/input_form"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="224dp"
-        android:layout_marginLeft="224dp"
-        android:layout_marginTop="236dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@drawable/roundbut"
-        android:text="Input form"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.068"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <Button
+                android:id="@+id/market_place"
+                style="@android:style/Widget.DeviceDefault.Button.Toggle"
+                android:layout_width="150dp"
 
-    <Button
-        android:id="@+id/add_market_but"
-        style="@android:style/Widget.DeviceDefault.Button.Toggle"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="428dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@drawable/roundbut"
-        android:text="Add market"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                android:layout_height="150dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginLeft="36dp"
+                android:layout_marginTop="44dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/roundbut"
+                android:text="Market Place"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/weather"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="224dp"
-        android:layout_marginLeft="224dp"
-        android:layout_marginTop="428dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@drawable/roundbut"
-        android:text="Weather"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.068"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <Button
+                android:id="@+id/input_form_but"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="224dp"
+                android:layout_marginLeft="224dp"
+                android:layout_marginTop="44dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/roundbut"
+                android:text="Input form"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/add_market_but"
+                style="@android:style/Widget.DeviceDefault.Button.Toggle"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginLeft="36dp"
+                android:layout_marginTop="228dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/roundbut"
+                android:text="Add market"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/weather"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="224dp"
+                android:layout_marginLeft="224dp"
+                android:layout_marginTop="376dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/roundbut"
+                android:text="Weather"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.181"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+
 
     <Button
         android:id="@+id/logout_but"
-        android:layout_width="425dp"
-        android:layout_height="79dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginStart="224dp"
         android:layout_marginLeft="224dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:background="@drawable/roundbut"
+        android:background="@drawable/logout_round"
         android:text="Log OUT"
-        android:textSize="20dp"
+        android:textColor="#ffff"
+        android:textSize="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.939"
+        app:layout_constraintHorizontal_bias="0.781"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.952"
         app:layout_goneMarginEnd="0dp" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

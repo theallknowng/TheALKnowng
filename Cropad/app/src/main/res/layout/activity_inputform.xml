@@ -10,7 +10,7 @@
         android:id="@+id/textView"
         android:layout_width="154dp"
         android:layout_height="77dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="36dp"
         android:gravity="center"
         android:text="CROP"
         android:textSize="50dp"
@@ -20,10 +20,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/add_data_button"
         android:layout_width="226dp"
         android:layout_height="56dp"
-        android:layout_marginBottom="128dp"
+        android:layout_marginBottom="76dp"
         android:background="@drawable/round_button"
         android:text="Add data"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -75,7 +75,7 @@
         android:layout_width="263dp"
         android:layout_height="96dp"
         android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/add_data_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Irrigation"
@@ -97,5 +97,18 @@
             android:textSize="20dp" />
 
     </RadioGroup>
+
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="270dp"
+        android:layout_height="55dp"
+        android:ems="10"
+        android:editable="false"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/add_data_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/irrigationyesno" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

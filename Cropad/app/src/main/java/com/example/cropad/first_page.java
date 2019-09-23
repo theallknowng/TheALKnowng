@@ -18,6 +18,7 @@ public class first_page extends AppCompatActivity {
 
     public Button add_market;
     public Button weather;
+    public Button inputform;
 
     public void flipperimage(int image){
         ImageView imgview =new ImageView(this);
@@ -59,6 +60,14 @@ public class first_page extends AppCompatActivity {
 
         }
 
+        inputform = (Button) findViewById(R.id.input_form_but);
+        inputform.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent input = new Intent(first_page.this , Inputform.class);
+                startActivity(input);
+            }
+        });
 
         log_out= (Button) findViewById(R.id.logout_but);
         log_out.setOnClickListener(new View.OnClickListener() {
@@ -77,6 +86,7 @@ public class first_page extends AppCompatActivity {
                 startActivity(addmkt);
             }
         });
+
         weather = (Button) findViewById(R.id.weather);
         weather.setOnClickListener(new View.OnClickListener() {
             @Override
