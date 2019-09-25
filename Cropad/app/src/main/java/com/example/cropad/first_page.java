@@ -24,7 +24,7 @@ public class first_page extends AppCompatActivity {
         ImageView imgview =new ImageView(this);
         imgview.setBackgroundResource(image);
         v_flip.addView(imgview);
-        v_flip.setFlipInterval(4000);
+        v_flip.setFlipInterval(3000);
         v_flip.setAutoStart(true);
 
         v_flip.setInAnimation(this,android.R.anim.slide_in_left);
