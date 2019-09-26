@@ -104,6 +104,7 @@
         android:layout_height="55dp"
         android:ems="10"
         android:editable="false"
+        android:hint="date"
         android:inputType="textPersonName"
         android:text=""
         app:layout_constraintBottom_toTopOf="@+id/add_data_button"

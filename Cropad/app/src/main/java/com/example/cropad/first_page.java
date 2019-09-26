@@ -13,6 +13,8 @@ import java.util.Date;
 
 public class first_page extends AppCompatActivity {
 
+    public String url="http://10.0.4.248:5656/user/login";
+
     public Button log_out;
     ViewFlipper v_flip;
 
@@ -24,7 +26,7 @@ public class first_page extends AppCompatActivity {
         ImageView imgview =new ImageView(this);
         imgview.setBackgroundResource(image);
         v_flip.addView(imgview);
-        v_flip.setFlipInterval(3000);
+        v_flip.setFlipInterval(4000);
         v_flip.setAutoStart(true);
 
         v_flip.setInAnimation(this,android.R.anim.slide_in_left);
