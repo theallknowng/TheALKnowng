@@ -1,4 +1,8 @@
 var conn = require('../config/database-connection')
+var request = require('request-promise');
+
+const url='http://dataservice.accuweather.com/forecasts/v1/daily/1day/204842'
+var propertiesObject = { apikey:'hXdBW69CiAiCMNWJ5sddRGGZIfjoCthe' ,metric:'true' };
 
 function getUser (email_id, password, cb) {
   var sql = 'select * from users where email_id ="' + email_id + '" and password ="' + password + '"'
@@ -31,4 +35,22 @@ function newMarket (values, cb) {
   })
 }
 
-module.exports = { getUser, newUser, getMarkets, newMarket }
+function weather(req,res){
+  var data=1;
+  request({url:url, qs:propertiesObject}, function(err, response, body) {
+    
+    // var data=[]
+    if(err) { console.log(err); return; }
+    console.log("Get response: " + response.statusCode);
+    // data=[{"body":body}]
+    // console.log("data")
+    data=JSON.parse(body);
+  })
+  .then(()=>{
+  // console.log(data)
+  res.send({'minTemp':data.DailyForecasts[0].Temperature.Minimum.Value,'maxTemp':data.DailyForecasts[0].Temperature.Maximum.Value, 'text':data.Headline.Text })
+  })
+}
+
+
+module.exports = { getUser, newUser, getMarkets, newMarket, weather }

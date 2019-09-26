@@ -45,4 +45,9 @@ router.post('/marketRegister', function(req,res){
   })
 })
 
+router.post('/weather',function(req,res){
+  database.weather(req,res)
+
+})
+
 module.exports = router
