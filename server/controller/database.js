@@ -48,6 +48,7 @@ function weather(req,res){
   })
   .then(()=>{
   // console.log(data)
+  // res.send(data)
   res.send({'minTemp':data.DailyForecasts[0].Temperature.Minimum.Value,'maxTemp':data.DailyForecasts[0].Temperature.Maximum.Value, 'text':data.Headline.Text })
   })
 }

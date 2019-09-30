@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".weather_forecast"
-    android:background="@color/colorPrimary">
+    android:background="#7FFF00">
 
 
     <!--    <TextView-->
@@ -35,10 +35,12 @@
         android:id="@+id/title"
         android:layout_width="194dp"
         android:layout_height="87dp"
-        android:background="#ffff"
+        android:background="@drawable/crad_round"
+        android:elevation="16dp"
         android:layout_marginTop="68dp"
         android:gravity="center"
         android:text="Weather Forecast"
+
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -48,7 +50,9 @@
     <androidx.cardview.widget.CardView
         android:layout_width="357dp"
         android:layout_height="273dp"
-        android:background="@drawable/round_button"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="@dimen/cardview_compat_inset_shadow"
+        android:divider="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,6 +64,8 @@
             android:layout_height="255dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
+            android:elevation="10dp"
+            android:divider = "@android:color/transparent"
             android:layout_marginBottom="10dp">
 
             <ImageView

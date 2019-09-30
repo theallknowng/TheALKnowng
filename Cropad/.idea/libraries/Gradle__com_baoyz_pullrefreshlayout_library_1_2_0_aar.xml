@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: com.baoyz.pullrefreshlayout:library:1.2.0@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5a2d944596f1ea0dae0c8deaccbf0590/jetified-library-1.2.0/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9bd44727c506caf7ad4f49c060e2868e/jetified-library-1.2.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5a2d944596f1ea0dae0c8deaccbf0590/jetified-library-1.2.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5a2d944596f1ea0dae0c8deaccbf0590/jetified-library-1.2.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9bd44727c506caf7ad4f49c060e2868e/jetified-library-1.2.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9bd44727c506caf7ad4f49c060e2868e/jetified-library-1.2.0/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.baoyz.pullrefreshlayout/library/1.2.0/65d6d477e1fb7c373c61fe554f3b81b28dc10c05/library-1.2.0-javadoc.jar!/" />

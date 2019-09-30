@@ -21,6 +21,8 @@ public class first_page extends AppCompatActivity {
     public Button add_market;
     public Button weather;
     public Button inputform;
+    public Button marketplace;
+    public  Button expertarticles;
 
     public void flipperimage(int image){
         ImageView imgview =new ImageView(this);
@@ -62,6 +64,15 @@ public class first_page extends AppCompatActivity {
 
         }
 
+        marketplace = (Button) findViewById(R.id.market_place);
+        marketplace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent market = new Intent(first_page.this , marketplace.class);
+                startActivity(market);
+            }
+        });
+
         inputform = (Button) findViewById(R.id.input_form_but);
         inputform.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +107,18 @@ public class first_page extends AppCompatActivity {
                 Intent weather_i = new Intent( first_page.this , weather_forecast.class);
                 startActivity(weather_i);
             }
+        });
+
+        expertarticles = (Button) findViewById(R.id.expert_articles);
+        expertarticles.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent expert = new Intent( first_page.this , expertadvice.class);
+                startActivity(expert);
+            }
+
+
+
         });
     }
 }
