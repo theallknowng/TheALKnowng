@@ -19,7 +19,7 @@ function newUser (values, cb) {
 }
 
 function getMarkets (lat, long, crop_name, cb) {
-  var sql = 'SELECT markets.id,markets.name,market_crop_rel.crop_name,market_crop_rel.crop_price, ( 3959 * acos( cos( radians(' + lat + ') ) * cos( radians( market_lat ) ) \
+  var sql = 'SELECT markets.id,markets.name,markets.market_lat, markets.market_long, market_crop_rel.crop_name,market_crop_rel.crop_price, ( 3959 * acos( cos( radians(' + lat + ') ) * cos( radians( market_lat ) ) \
 * cos( radians( market_long ) - radians(' + long + ') ) + sin( radians(' + lat + ') ) * sin(radians(market_lat)) ) ) AS distance \
 FROM markets , market_crop_rel where markets.id = market_crop_rel.market_id and market_crop_rel.crop_name = "' + crop_name + '"\
  ORDER BY distance desc'
