@@ -68,7 +68,7 @@ public class first_page extends AppCompatActivity {
         marketplace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent market = new Intent(first_page.this , marketplace.class);
+                Intent market = new Intent(first_page.this , Market_list.class);
                 startActivity(market);
             }
         });
