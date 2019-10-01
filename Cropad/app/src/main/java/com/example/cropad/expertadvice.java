@@ -24,20 +24,20 @@ public class expertadvice extends AppCompatActivity {
         recyclerView = findViewById(R.id.expert_advice_recyclerview);
 
         expertdataList = new ArrayList<>();
-        expertdataList.add(new expertdata("alok", "crop"));
-        expertdataList.add(new expertdata("alok", "crop"));
-        expertdataList.add(new expertdata("alok", "crop"));
-        expertdataList.add(new expertdata("alok", "crop"));
-        expertdataList.add(new expertdata("alok", "crop"));
-        expertdataList.add(new expertdata("alok", "crop"));
-        expertdataList.add(new expertdata("alok", "crop"));
-        expertdataList.add(new expertdata("alok", "crop"));
-        expertdataList.add(new expertdata("alok", "crop"));
-        expertdataList.add(new expertdata("alok", "crop"));
-        expertdataList.add(new expertdata("alok", "crop"));
-        expertdataList.add(new expertdata("alok", "crop"));
-        expertdataList.add(new expertdata("alok", "crop"));
-        expertdataList.add(new expertdata("alok", "crop"));
+        expertdataList.add(new expertdata("T. Kuhu", "Coupling crop","https://www.sciencedirect.com/science/article/pii/S0308521X19303257"));
+        expertdataList.add(new expertdata("Andrew P. Smith", "Whole farm implications of lucerne transitions in temperate crop-livestock systems","https://www.sciencedirect.com/science/article/pii/S0308521X18300222"));
+        expertdataList.add(new expertdata("Loksatta", "Sendriya Sheti","https://www.loksatta.com/lokshivar-news/marathi-articles-on-introduction-to-organic-farming-1507444/"));
+        expertdataList.add(new expertdata("alok", "crop","https://www.loksatta.com/lokshivar-news/marathi-articles-on-introduction-to-organic-farming-1507444/"));
+        expertdataList.add(new expertdata("alok", "crop","https://www.loksatta.com/lokshivar-news/marathi-articles-on-introduction-to-organic-farming-1507444/"));
+        expertdataList.add(new expertdata("alok", "crop","https://www.loksatta.com/lokshivar-news/marathi-articles-on-introduction-to-organic-farming-1507444/"));
+        expertdataList.add(new expertdata("alok", "crop","https://www.loksatta.com/lokshivar-news/marathi-articles-on-introduction-to-organic-farming-1507444/"));
+        expertdataList.add(new expertdata("alok", "crop","https://www.loksatta.com/lokshivar-news/marathi-articles-on-introduction-to-organic-farming-1507444/"));
+        expertdataList.add(new expertdata("alok", "crop","https://www.loksatta.com/lokshivar-news/marathi-articles-on-introduction-to-organic-farming-1507444/"));
+        expertdataList.add(new expertdata("alok", "crop","https://www.loksatta.com/lokshivar-news/marathi-articles-on-introduction-to-organic-farming-1507444/"));
+        expertdataList.add(new expertdata("alok", "crop","https://www.loksatta.com/lokshivar-news/marathi-articles-on-introduction-to-organic-farming-1507444/"));
+        expertdataList.add(new expertdata("alok", "crop","https://www.loksatta.com/lokshivar-news/marathi-articles-on-introduction-to-organic-farming-1507444/"));
+        expertdataList.add(new expertdata("alok", "crop","https://www.loksatta.com/lokshivar-news/marathi-articles-on-introduction-to-organic-farming-1507444/"));
+        expertdataList.add(new expertdata("alok", "crop","https://www.loksatta.com/lokshivar-news/marathi-articles-on-introduction-to-organic-farming-1507444/"));
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         RecyclerView.LayoutManager layoutManager1 = layoutManager;

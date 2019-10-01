@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     public Button login;
     public Button test;
     String passvalue;
-    String url="http://192.168.1.107:5656/user/login";
+    String url="http://10.0.4.248:5656/user/login";
     private EditText user,p;
 
     public void firstpag(){
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
                 final String username = user.getText().toString();
                 final String Password = p.getText().toString();
-                String url="http://10.0.4.196:5656/user/login";
+                String url="http://10.0.4.248:5656/user/login";
                 RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
                 JSONObject jsonObject = new JSONObject();
                 try{
@@ -106,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
 
                         if(success.equals("true")){
                             firstpag();
+                            finish();
                         }
                         else
                         {

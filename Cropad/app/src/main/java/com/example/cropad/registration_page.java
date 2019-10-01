@@ -76,7 +76,7 @@ public class registration_page extends AppCompatActivity {
                         final String Email = email.getText().toString();
                         final String Hometown = hT.getText().toString();
                         final String Password = p.getText().toString();
-                        String url = "http://10.0.4.196:5656/user/register";
+                        String url = "http://10.0.4.248:5656/user/register";
                         RequestQueue requestQueue = Volley.newRequestQueue(registration_page.this);
                         JSONObject jsonObject = new JSONObject();
                         try {

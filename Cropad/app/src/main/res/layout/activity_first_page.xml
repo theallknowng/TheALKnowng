@@ -4,24 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#47D476"
+    android:background="#32cb"
     tools:context=".first_page">
     <TextView
         android:id="@+id/title"
-        android:layout_width="399dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="#ffff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#102027"
         android:gravity="center"
-        android:text="CROP"
+        android:text="CROPAD"
+        android:textColor="#fafafa"
         android:textAlignment="center"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/email_id"
+        android:textSize="45dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -30,17 +24,27 @@
     <ViewFlipper
         android:id="@+id/flipper"
         android:layout_width="match_parent"
-        android:layout_height="182dp"
+        android:layout_height="250dp"
         android:layout_centerHorizontal="true"
         app:layout_constraintTop_toTopOf="@+id/title"
         android:layout_below="@+id/title"
         tools:layout_editor_absoluteX="6dp"
-        />
+        >
+
+<!--        <Button-->
+<!--            android:id="@+id/logout_but"-->
+<!--            android:layout_width="70dp"-->
+<!--            android:layout_height="70dp"-->
+<!--            android:background="@drawable/logout_round"-->
+<!--            android:text="Log OUT"-->
+<!--            android:textColor="#fafafa"-->
+<!--            android:textSize="10dp" />-->
+    </ViewFlipper>
 
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="487dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/flipper"
         app:layout_constraintVertical_bias="0.741"
@@ -57,7 +61,6 @@
                 android:id="@+id/market_place"
                 style="@android:style/Widget.DeviceDefault.Button.Toggle"
                 android:layout_width="150dp"
-
                 android:layout_height="150dp"
                 android:layout_marginStart="26dp"
                 android:layout_marginLeft="26dp"
@@ -67,12 +70,14 @@
                 android:background="@drawable/roundbut"
                 android:text=" Nearby Market     Place"
                 android:textSize="20dp"
+                android:textColor="#fafafa"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.039"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
+                android:textColor="#fafafa"
                 android:id="@+id/input_form_but"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
@@ -83,11 +88,12 @@
                 android:text="Input form"
                 android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.402"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
+                android:textColor="#fafafa"
                 android:id="@+id/add_market_but"
                 style="@android:style/Widget.DeviceDefault.Button.Toggle"
                 android:layout_width="150dp"
@@ -101,11 +107,12 @@
                 android:text="Add market"
                 android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.039"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
+                android:textColor="#fafafa"
                 android:id="@+id/weather"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
@@ -118,22 +125,41 @@
                 android:text="Weather"
                 android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.457"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
+                android:id="@+id/logout_but"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="194dp"
+                android:layout_marginLeft="194dp"
+                android:layout_marginTop="408dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/roundbut"
+                android:text="LOG OUT"
+                android:textColor="#fafafa"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.457"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:textColor="#fafafa"
                 android:id="@+id/expert_articles"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="32dp"
                 android:layout_marginEnd="176dp"
                 android:layout_marginRight="176dp"
                 android:background="@drawable/roundbut"
                 android:text="EXpert Articles"
                 android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.533"
+                app:layout_constraintHorizontal_bias="0.411"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/add_market_but" />
 
@@ -141,17 +167,5 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
-
-    <Button
-        android:id="@+id/logout_but"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="590dp"
-        android:layout_marginLeft="290dp"
-        android:background="@drawable/logout_round"
-        android:text="Log OUT"
-        android:textColor="#ffff"
-        android:textSize="10dp"
-        app:layout_goneMarginEnd="0dp" />
 
 </RelativeLayout>

@@ -6,12 +6,14 @@ import android.widget.ImageView;
 public class expertdata {
     String name;
     String title;
+    String link;
 //    ImageView imag;
 
 
-    public expertdata(String name, String title) {
+    public expertdata(String name, String title, String link  ) {
         this.name = name;
         this.title = title;
+        this.link = link;
 //        this.imag = img;
     }
 
@@ -38,4 +40,12 @@ public class expertdata {
 //    public void setImag(ImageView imag) {
 //        this.imag = imag;
 //    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
 }

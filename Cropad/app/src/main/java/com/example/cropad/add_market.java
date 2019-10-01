@@ -64,7 +64,7 @@ public class add_market extends AppCompatActivity {
                     final String cityName = cityname.getText().toString();
                     final String Latitude = lat.getText().toString();
                     final String Longitude = longi.getText().toString();
-                    String url = "http://10.0.4.196:5656/user/marketRegister";
+                    String url = "http://10.0.4.248:5656/user/marketRegister";
                     RequestQueue requestQueue = Volley.newRequestQueue(add_market.this);
                     JSONObject jsonObject = new JSONObject();
                     try {

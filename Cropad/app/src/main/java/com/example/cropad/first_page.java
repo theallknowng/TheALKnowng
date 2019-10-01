@@ -30,7 +30,6 @@ public class first_page extends AppCompatActivity {
         v_flip.addView(imgview);
         v_flip.setFlipInterval(4000);
         v_flip.setAutoStart(true);
-
         v_flip.setInAnimation(this,android.R.anim.slide_in_left);
         v_flip.setOutAnimation(this,android.R.anim.slide_out_right);
     }
@@ -44,7 +43,7 @@ public class first_page extends AppCompatActivity {
         String currentmonth = sdf.format(new Date());
         Integer currentmonthin = Integer.valueOf(currentmonth);
 
-        int rabi[] = {R.drawable.jowar, R.drawable.wheat};
+        int rabi[] = {R.drawable.jowar, R.drawable.wheat,R.drawable.peas,R.drawable.barley};
         int kharif[] = {R.drawable.sugar,R.drawable.jowar};
 
         v_flip = findViewById(R.id.flipper);
@@ -88,6 +87,7 @@ public class first_page extends AppCompatActivity {
             public void onClick(View view) {
                 Intent l = new Intent(first_page.this, MainActivity.class);
                 startActivity(l);
+                finish();
             }
         });
 

@@ -1,11 +1,15 @@
 package com.example.cropad;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,9 +43,28 @@ public class ExpertAdapter extends RecyclerView.Adapter<ExpertAdapter.ViewHolder
         ImageView imageView = holder.imageView;
         TextView title = holder.title;
         TextView author = holder.author;
+        final String link=dataList.get(position).getLink();
 
         title.setText(dataList.get(position).getTitle());
         author.setText(dataList.get(position).getName());
+
+        holder.linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context, "hello ", Toast.LENGTH_LONG).show();
+
+
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(link));
+
+                // Always use string resources for UI text. This says something like "Share this photo with"
+                String title = "Select to open";
+                // Create and start the chooser
+                Intent chooser = Intent.createChooser(intent, title);
+                context.startActivity(chooser);
+            }
+        });
+
 
     }
 
@@ -53,6 +76,8 @@ public class ExpertAdapter extends RecyclerView.Adapter<ExpertAdapter.ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView title, author;
+        LinearLayout linearLayout;
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -60,6 +85,7 @@ public class ExpertAdapter extends RecyclerView.Adapter<ExpertAdapter.ViewHolder
             imageView = itemView.findViewById(R.id.imgtitle1);
             title = itemView.findViewById(R.id.title1);
             author = itemView.findViewById(R.id.authorname1);
+            linearLayout=itemView.findViewById(R.id.expert_item);
 
         }
     }

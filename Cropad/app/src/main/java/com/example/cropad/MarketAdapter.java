@@ -4,11 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.provider.ContactsContract;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -44,14 +47,26 @@ public class MarketAdapter extends RecyclerView.Adapter<MarketAdapter.ViewHolder
         ImageView markImg=holder.markImg;
         TextView markName=holder.markName;
         TextView cropPrice=holder.cropPrice;
+        final double lat = dataList.get(position).getLat();
+        final double lon = dataList.get(position).getLon();
+//        Log.d("Lat",lat);
+//        Log.d("lon",lon);
+//        cropPrice.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(context, "hello ", Toast.LENGTH_LONG).show();
+//
+//            }
+//        });
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                String uri = String.format(Locale.ENGLISH, "http://maps.google.com/maps?q=loc:%f,%f", 19.1668,73.2368);
-//                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-                Intent intent=new Intent(view.getContext(),MainActivity.class);
-                view.getContext().startActivity(intent);
+                String uri = String.format(Locale.ENGLISH, "http://maps.google.com/maps?q=loc:%f,%f", lat,lon);
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                Toast.makeText(context, "hello ", Toast.LENGTH_LONG).show();
+               // Intent intent=new Intent(context,MainActivity.class);
+                context.startActivity(intent);
             }
         });
 
@@ -69,12 +84,13 @@ public class MarketAdapter extends RecyclerView.Adapter<MarketAdapter.ViewHolder
 
         ImageView markImg;
         TextView markName,cropPrice;
-
+        LinearLayout linearLayout;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             markImg=itemView.findViewById(R.id.marketImage);
             markName=itemView.findViewById(R.id.marketName);
             cropPrice=itemView.findViewById(R.id.marketPrice);
+            linearLayout = itemView.findViewById(R.id.market_item);
         }
     }
 }
