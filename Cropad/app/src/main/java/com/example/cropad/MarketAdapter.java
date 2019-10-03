@@ -64,8 +64,7 @@ public class MarketAdapter extends RecyclerView.Adapter<MarketAdapter.ViewHolder
             public void onClick(View view) {
                 String uri = String.format(Locale.ENGLISH, "http://maps.google.com/maps?q=loc:%f,%f", lat,lon);
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-                Toast.makeText(context, "hello ", Toast.LENGTH_LONG).show();
-               // Intent intent=new Intent(context,MainActivity.class);
+                // Intent intent=new Intent(context,MainActivity.class);
                 context.startActivity(intent);
             }
         });

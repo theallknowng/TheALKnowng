@@ -14,6 +14,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import static com.example.cropad.Constants.*;
+
 
 public class weather_forecast extends AppCompatActivity {
 
@@ -30,7 +32,6 @@ public class weather_forecast extends AppCompatActivity {
         datecurrent.setText(currentdate);
 
         //printing min max temp
-        String url="http://10.0.4.248:5656/user/weather";
         final TextView min,max,precipitation;
 
         min = (TextView) findViewById(R.id.temperature_min);
@@ -41,7 +42,7 @@ public class weather_forecast extends AppCompatActivity {
         JSONObject jsonObject = new JSONObject();
 
         final String requestBody = jsonObject.toString();
-        ConnectionManager.sendData(requestBody, requestQueue, url, new ConnectionManager.VolleyCallback() {
+        ConnectionManager.sendData(requestBody, requestQueue, URL+"/weather", new ConnectionManager.VolleyCallback() {
             @Override
             public void onSuccessResponse(String result) {
 

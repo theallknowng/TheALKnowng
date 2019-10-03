@@ -1,6 +1,5 @@
 package com.example.cropad;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
@@ -32,6 +31,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
+import static com.example.cropad.Constants.*;
 
 public class registration_page extends AppCompatActivity {
 
@@ -76,7 +76,6 @@ public class registration_page extends AppCompatActivity {
                         final String Email = email.getText().toString();
                         final String Hometown = hT.getText().toString();
                         final String Password = p.getText().toString();
-                        String url = "http://10.0.4.248:5656/user/register";
                         RequestQueue requestQueue = Volley.newRequestQueue(registration_page.this);
                         JSONObject jsonObject = new JSONObject();
                         try {
@@ -89,7 +88,7 @@ public class registration_page extends AppCompatActivity {
                             e.printStackTrace();
                         }
                         final String requestBody = jsonObject.toString();
-                        ConnectionManager.sendData(requestBody, requestQueue, url, new ConnectionManager.VolleyCallback() {
+                        ConnectionManager.sendData(requestBody, requestQueue, URL+"/register", new ConnectionManager.VolleyCallback() {
                             @Override
                             public void onSuccessResponse(String result) {
                                 JSONObject jsonObject = null;

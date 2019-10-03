@@ -15,6 +15,7 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import static com.example.cropad.Constants.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -75,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
 
                 final String username = user.getText().toString();
                 final String Password = p.getText().toString();
-                String url="http://10.0.4.248:5656/user/login";
                 RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
                 JSONObject jsonObject = new JSONObject();
                 try{
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 final String requestBody = jsonObject.toString();
-                ConnectionManager.sendData(requestBody, requestQueue, url, new ConnectionManager.VolleyCallback() {
+                ConnectionManager.sendData(requestBody, requestQueue, URL+"/login", new ConnectionManager.VolleyCallback() {
                     @Override
                     public void onSuccessResponse(String result) {
 

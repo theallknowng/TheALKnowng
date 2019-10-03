@@ -21,6 +21,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import static com.example.cropad.Constants.*;
+
 public class Market_list extends AppCompatActivity {
 
     RecyclerView recyclerView;
@@ -45,7 +47,6 @@ public class Market_list extends AppCompatActivity {
                 marketdataList=new ArrayList<>();
 
                 final String crop= cropName.getText().toString();
-                String url="http://10.0.4.248:5656/user/markets";
                 RequestQueue requestQueue = Volley.newRequestQueue(Market_list.this);
                 JSONObject jsonObject = new JSONObject();
                 try{
@@ -58,7 +59,7 @@ public class Market_list extends AppCompatActivity {
                 }
                 final String requestBody = jsonObject.toString();
                 int n;
-                ConnectionManager.sendData(requestBody, requestQueue, url, new ConnectionManager.VolleyCallback() {
+                ConnectionManager.sendData(requestBody, requestQueue, URL+"/markets", new ConnectionManager.VolleyCallback() {
                     @Override
                     public void onSuccessResponse(String result) {
 

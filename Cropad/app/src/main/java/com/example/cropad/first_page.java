@@ -13,8 +13,6 @@ import java.util.Date;
 
 public class first_page extends AppCompatActivity {
 
-    public String url="http://10.0.4.248:5656/user/login";
-
     public Button log_out;
     ViewFlipper v_flip;
 
@@ -43,7 +41,7 @@ public class first_page extends AppCompatActivity {
         String currentmonth = sdf.format(new Date());
         Integer currentmonthin = Integer.valueOf(currentmonth);
 
-        int rabi[] = {R.drawable.jowar, R.drawable.wheat,R.drawable.peas,R.drawable.barley};
+        int rabi[] = {R.drawable.jowar, R.drawable.wheat,R.drawable.peas};
         int kharif[] = {R.drawable.sugar,R.drawable.jowar};
 
         v_flip = findViewById(R.id.flipper);

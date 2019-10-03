@@ -28,6 +28,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
+import static com.example.cropad.Constants.*;
 
 public class add_market extends AppCompatActivity {
 
@@ -75,7 +76,7 @@ public class add_market extends AppCompatActivity {
                         e.printStackTrace();
                     }
                     final String requestBody = jsonObject.toString();
-                    ConnectionManager.sendData(requestBody, requestQueue, url, new ConnectionManager.VolleyCallback() {
+                    ConnectionManager.sendData(requestBody, requestQueue, URL+"/marketRegister", new ConnectionManager.VolleyCallback() {
                         @Override
                         public void onSuccessResponse(String result) {
                             JSONObject jsonObject = null;
