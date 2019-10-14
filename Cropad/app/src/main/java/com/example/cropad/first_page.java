@@ -8,8 +8,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.Volley;
+import com.squareup.picasso.Picasso;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import static com.example.cropad.Constants.*;
 
 public class first_page extends AppCompatActivity {
 
@@ -22,11 +33,13 @@ public class first_page extends AppCompatActivity {
     public Button marketplace;
     public  Button expertarticles;
 
-    public void flipperimage(int image){
-        ImageView imgview =new ImageView(this);
-        imgview.setBackgroundResource(image);
+    public void flipperimage(String image){
+        ImageView imgview =new ImageView(getApplicationContext());
+//        imgview.setBackgroundResource(image);
+//        Picasso.with(getApplicationContext()).load("http://10.0.4.196:5656/images/barley.jpg").into(imgview);
+        Picasso.with(getApplicationContext()).load(URL_Image+image).into(imgview);
         v_flip.addView(imgview);
-        v_flip.setFlipInterval(4000);
+        v_flip.setFlipInterval(1000) ;
         v_flip.setAutoStart(true);
         v_flip.setInAnimation(this,android.R.anim.slide_in_left);
         v_flip.setOutAnimation(this,android.R.anim.slide_out_right);
@@ -46,20 +59,75 @@ public class first_page extends AppCompatActivity {
 
         v_flip = findViewById(R.id.flipper);
 
-        if (currentmonthin >= 04 && currentmonthin <= 10)
-        {
-            for (int i = 0; i < rabi.length; i++) {
-                flipperimage(rabi[i]);
+        RequestQueue requestQueue = Volley.newRequestQueue(first_page.this);
+        JSONObject jsonObject = new JSONObject();
+
+        final String requestBody = jsonObject.toString();
+
+        ConnectionManager.sendData(requestBody, requestQueue, URL + "/image", new ConnectionManager.VolleyCallback() {
+            @Override
+            public void onSuccessResponse(String result) {
+                JSONObject jsonObject= null;
+                try {
+                    jsonObject = new JSONObject(result);
+                }
+                catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                String success= null;
+                JSONArray array= null;
+                try {
+                    success = jsonObject.getString("success");
+                    array=jsonObject.getJSONArray("imageURL");
+                }
+                catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                if(success.equals("true")){
+                    int i=0;
+                    String a;
+                     for (i=0;i<array.length();i++){
+                        try {
+                            a = array.getString(i);
+                            System.out.println("URL"+a);
+                            flipperimage(a);
+                        }
+                        catch (JSONException e){
+                            e.printStackTrace();
+                        }
+
+                     }
+                }
             }
 
-        }
+            @Override
+            public void onErrorResponse(VolleyError error) {
 
-        else{
-            for (int i = 0; i < kharif.length; i++) {
-                flipperimage(kharif[i]);
+                error.printStackTrace();
+
             }
+        });
 
-        }
+
+
+
+
+//
+//        if (currentmonthin >= 04 && currentmonthin <= 10)
+//        {
+//            for (int i = 0; i < rabi.length; i++) {
+//                flipperimage(rabi[i]);
+//            }
+//
+//        }
+//
+//        else{
+//            for (int i = 0; i < kharif.length; i++) {
+//                flipperimage(kharif[i]);
+//            }
+//
+//        }
 
         marketplace = (Button) findViewById(R.id.market_place);
         marketplace.setOnClickListener(new View.OnClickListener() {
@@ -114,9 +182,6 @@ public class first_page extends AppCompatActivity {
                 Intent expert = new Intent( first_page.this , expertadvice.class);
                 startActivity(expert);
             }
-
-
-
         });
     }
 }

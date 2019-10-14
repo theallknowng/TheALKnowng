@@ -1,6 +1,7 @@
 var express = require('express')
 var router = express.Router()
 var database = require('../controller/database')
+var fs = require('fs')
 
 router.post('/login', function (req, res) {
   database.getUser(req.body.email_id, req.body.password, (err, user) => {
@@ -42,6 +43,15 @@ router.post('/marketRegister', function(req,res){
       res.json({ success: 'true' })
     }
 
+  })
+})
+
+router.post('/image', function(req,res){
+  fs.readdir('./public/images/',(err,files)=>{
+    if(err )throw err
+    // console.log(err)
+    resp={'success':'true','imageURL': files}
+    res.json(resp)
   })
 })
 
