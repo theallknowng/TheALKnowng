@@ -53,10 +53,13 @@ public class ExpertAdapter extends RecyclerView.Adapter<ExpertAdapter.ViewHolder
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(link));
 
+
                 // Always use string resources for UI text. This says something like "Share this photo with"
                 String title = "Select to open";
                 // Create and start the chooser
                 Intent chooser = Intent.createChooser(intent, title);
+                chooser.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
                 context.startActivity(chooser);
             }
         });

@@ -29,7 +29,9 @@
         app:layout_constraintTop_toTopOf="@+id/title"
         android:layout_below="@+id/title"
         tools:layout_editor_absoluteX="6dp"
-        >
+        android:autoStart="true"
+        android:flipInterval="3000">
+
 
 <!--        <Button-->
 <!--            android:id="@+id/logout_but"-->

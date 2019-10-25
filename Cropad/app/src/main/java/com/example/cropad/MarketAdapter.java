@@ -64,6 +64,8 @@ public class MarketAdapter extends RecyclerView.Adapter<MarketAdapter.ViewHolder
             public void onClick(View view) {
                 String uri = String.format(Locale.ENGLISH, "http://maps.google.com/maps?q=loc:%f,%f", lat,lon);
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
                 // Intent intent=new Intent(context,MainActivity.class);
                 context.startActivity(intent);
             }

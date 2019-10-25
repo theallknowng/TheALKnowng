@@ -39,8 +39,6 @@ public class first_page extends AppCompatActivity {
 //        Picasso.with(getApplicationContext()).load("http://10.0.4.196:5656/images/barley.jpg").into(imgview);
         Picasso.with(getApplicationContext()).load(URL_Image+image).into(imgview);
         v_flip.addView(imgview);
-        v_flip.setFlipInterval(1000) ;
-        v_flip.setAutoStart(true);
         v_flip.setInAnimation(this,android.R.anim.slide_in_left);
         v_flip.setOutAnimation(this,android.R.anim.slide_out_right);
     }
@@ -57,7 +55,7 @@ public class first_page extends AppCompatActivity {
         int rabi[] = {R.drawable.jowar, R.drawable.wheat,R.drawable.peas};
         int kharif[] = {R.drawable.sugar,R.drawable.jowar};
 
-        v_flip = findViewById(R.id.flipper);
+        v_flip = (ViewFlipper) findViewById(R.id.flipper);
 
         RequestQueue requestQueue = Volley.newRequestQueue(first_page.this);
         JSONObject jsonObject = new JSONObject();
