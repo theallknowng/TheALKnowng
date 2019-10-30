@@ -2,7 +2,9 @@ package com.example.cropad;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     String passvalue;
     String url="http://10.0.4.248:5656/user/login";
     private EditText user,p;
+    private static final String PREF_NAME = "LOGIN";
+
 
     public void firstpag(){
         Intent fp = new Intent(MainActivity.this, first_page.class);
@@ -46,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        final SharedPreferences sharedpreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+
 
         user = (EditText) findViewById(R.id.email_id);
         p = (EditText) findViewById(R.id.password);
@@ -59,14 +65,14 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-        test = (Button) findViewById(R.id.test_but);
-        test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                testing();
-            }
-        });
+//
+//        test = (Button) findViewById(R.id.test_but);
+//        test.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                testing();
+//            }
+//        });
 
         login = (Button) findViewById(R.id.login_but);
         login.setOnClickListener(new View.OnClickListener() {
@@ -105,6 +111,9 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                         if(success.equals("true")){
+                            SharedPreferences.Editor editor = sharedpreferences.edit();
+                            editor.putString(PREF_NAME,username);
+                            editor.apply();
                             firstpag();
                             finish();
                         }

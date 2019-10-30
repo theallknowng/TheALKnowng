@@ -46,6 +46,19 @@ router.post('/marketRegister', function(req,res){
   })
 })
 
+router.post('/irrigationData', function(req, res){
+  var values=[ req.body.email,req.body.cropName,req.body.irrigation ]
+  database.irrigationDetails(values, (err, result)=>{
+    if (err) {
+      res.json({ success: 'false' })
+    } else {
+      res.json({ success: 'true' })
+    }
+    
+  })
+
+})
+
 router.post('/image', function(req,res){
   fs.readdir('./public/images/',(err,files)=>{
     if(err )throw err

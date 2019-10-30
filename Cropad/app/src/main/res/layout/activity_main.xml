@@ -137,19 +137,19 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/test_but"
-        android:layout_width="230dp"
-        android:layout_height="60dp"
-        android:background="@drawable/round_button"
-        android:text="TEST"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_but"
-        app:layout_constraintVertical_bias="0.519" />
+<!--    <Button-->
+<!--        android:id="@+id/test_but"-->
+<!--        android:layout_width="230dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:background="@drawable/round_button"-->
+<!--        android:text="TEST"-->
+<!--        android:textSize="20dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.497"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/register_but"-->
+<!--        app:layout_constraintVertical_bias="0.519" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

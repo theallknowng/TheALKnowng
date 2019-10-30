@@ -35,6 +35,14 @@ function newMarket (values, cb) {
   })
 }
 
+function irrigationDetails (values, cb) {
+  var sql = 'INSERT INTO `userCrops` (`email_id`, `cropName`, `Irrigation`) VALUES(?)'
+  conn.query(sql, [values], function (err, result) {
+    cb(err, result)
+  })
+}
+
+
 function weather(req,res){
   var data=1;
   request({url:url, qs:propertiesObject}, function(err, response, body) {
@@ -54,4 +62,4 @@ function weather(req,res){
 }
 
 
-module.exports = { getUser, newUser, getMarkets, newMarket, weather }
+module.exports = { getUser, newUser, getMarkets, newMarket, weather, irrigationDetails }

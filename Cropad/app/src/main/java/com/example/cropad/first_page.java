@@ -2,7 +2,9 @@ package com.example.cropad;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,6 +34,8 @@ public class first_page extends AppCompatActivity {
     public Button inputform;
     public Button marketplace;
     public  Button expertarticles;
+    private static final String PREF_NAME = "LOGIN";
+
 
     public void flipperimage(String image){
         ImageView imgview =new ImageView(getApplicationContext());
@@ -47,6 +51,7 @@ public class first_page extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_page);
+        final SharedPreferences sharedpreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
 
         SimpleDateFormat sdf = new SimpleDateFormat("MM");
         String currentmonth = sdf.format(new Date());
@@ -149,6 +154,9 @@ public class first_page extends AppCompatActivity {
         log_out.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences.Editor editor = sharedpreferences.edit();
+                editor.remove(PREF_NAME);
+                editor.apply();
                 Intent l = new Intent(first_page.this, MainActivity.class);
                 startActivity(l);
                 finish();
